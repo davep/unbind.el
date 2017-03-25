@@ -2,7 +2,7 @@
 ;; Copyright 2002-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 1.3
+;; Version: 1.4
 ;; Keywords: lisp, unbind
 ;; URL: https://github.com/davep/unbind.el
 ;; Package-Requires: ((cl-lib "0.5"))

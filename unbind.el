@@ -10,6 +10,13 @@
 ;; unbind.el is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2. For details see the file COPYING.
 
+;;; Commentary:
+;;
+;; unbind.el provides some simple commands for unbinding values in Emacs
+;; Lisp. I find this handy when working on code.
+
+;;; Code:
+
 (eval-when-compile
   (require 'cl-lib))
 
@@ -55,4 +62,4 @@ property list."
 
 (provide 'unbind)
 
-;;; unbind.el ends here.
+;;; unbind.el ends here

@@ -1,6 +1,11 @@
 ;;; unbind.el --- Commands for unbinding things
-;; Copyright 2002 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.3 $
+;; Copyright 2002-2017 by Dave Pearson <davep@davep.org>
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.3
+;; Keywords: lisp, unbind
+;; URL: https://github.com/davep/unbind.el
+;; Package-Requires: ((cl-lib "0.5"))
 
 ;; unbind.el is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2. For details see the file COPYING.

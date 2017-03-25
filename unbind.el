@@ -6,7 +6,7 @@
 ;; Public Licence, version 2. For details see the file COPYING.
 
 (eval-when-compile
-  (require 'cl))
+  (require 'cl-lib))
 
 ;;;###autoload
 (defun unbind-defun ()
@@ -44,7 +44,7 @@ property list."
 (defun unbind-variable (symbol)
   "Remove the variable binding of SYMBOL."
   (interactive (list (completing-read "Variable: "
-                                      (loop for s being the symbols
+                                      (cl-loop for s being the symbols
                                             when (boundp s) collect (list (symbol-name s))))))
   (makunbound (if (stringp symbol) (intern symbol) symbol)))
 

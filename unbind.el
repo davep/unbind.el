@@ -53,7 +53,9 @@ property list."
 ;;;###autoload
 (defun unbind-variable (symbol)
   "Remove the variable binding of SYMBOL."
-  (interactive (list (completing-read "Variable: " obarray #'boundp)))
+  (interactive (list (completing-read "Variable: " obarray #'boundp t
+                                      (let ((v (variable-at-point)))
+                                        (when (symbolp v) (symbol-name v))))))
   (makunbound (if (stringp symbol) (intern symbol) symbol)))
 
 (provide 'unbind)

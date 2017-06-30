@@ -5,7 +5,6 @@
 ;; Version: 1.4
 ;; Keywords: lisp, unbind
 ;; URL: https://github.com/davep/unbind.el
-;; Package-Requires: ((cl-lib "0.5"))
 
 ;; unbind.el is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2. For details see the file COPYING.
@@ -17,8 +16,7 @@
 
 ;;; Code:
 
-(eval-when-compile
-  (require 'cl-lib))
+(require 'help-fns)
 
 ;;;###autoload
 (defun unbind-defun ()
@@ -55,9 +53,7 @@ property list."
 ;;;###autoload
 (defun unbind-variable (symbol)
   "Remove the variable binding of SYMBOL."
-  (interactive (list (completing-read "Variable: "
-                                      (cl-loop for s being the symbols
-                                            when (boundp s) collect (list (symbol-name s))))))
+  (interactive (list (completing-read "Variable: " obarray #'boundp)))
   (makunbound (if (stringp symbol) (intern symbol) symbol)))
 
 (provide 'unbind)
